@@ -1,8 +1,7 @@
 # Stage 1: Build the Go application
-FROM golang:1.21-alpine AS builder
+FROM golang:1.23.3-alpine AS builder
 WORKDIR /app
-# RUN apk add --no-cache git
-# RUN go install mvdan.cc/garble@latest
+
 ENV CGO_ENABLED=0
 COPY go.* .
 RUN go mod download
